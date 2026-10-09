@@ -6,8 +6,11 @@ HN BlackBox is divided by responsibility instead of keeping every Python module 
 
 | Folder | Purpose |
 |---|---|
-| `core/cryptography/required_algorithms/` | The seven algorithms requested for the main Cryptography workspace. |
-| `core/cryptography/extended_algorithms/` | Additional and legacy cipher implementations, including AES, Hill, Playfair, and classical helpers. |
+| `core/cryptography/classical/required/` | Required classical rack: nine requested algorithms including keyed and double/combining transposition. |
+| `core/cryptography/classical/additional/` | Additional classical/educational ciphers. |
+| `core/cryptography/modern/` | AES, DES, RSA, and hashing. |
+| `core/cryptography/steganography/` | Complete data-hiding/LSB engine. |
+| `core/cryptography/visualization/` | Presentation-only crypto visualization helpers. |
 | `core/cryptanalysis/` | Cipher analysis and statistical/frequency helpers. |
 | `core/network_security/` | Network inspection, network intelligence, graphs, and network tools. |
 | `core/web_security/` | Controlled web-security laboratory functionality. |

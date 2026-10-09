@@ -4,3 +4,7 @@ customtkinter>=5.2
 Pillow>=10.0
 numpy>=1.26
 psutil>=6.0
+pypdf>=5.0
+
+# Optional GPU cinematic window (WebGL):
+pywebview>=5.0; platform_system == "Windows"

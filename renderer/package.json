@@ -1,0 +1,25 @@
+{
+  "name": "hn-blackbox-cinematic-renderer",
+  "private": true,
+  "version": "2.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "dependencies": {
+    "@tsparticles/engine": "4.4.0",
+    "@tsparticles/slim": "4.4.0",
+    "gsap": "3.15.0",
+    "pixi.js": "8.20.1",
+    "three": "0.185.1"
+  },
+  "devDependencies": {
+    "vite": "8.2.2"
+  },
+  "description": "HN BlackBox V40 cinematic WebGL2 compositor with foreground-aware rendering, synthetic telemetry visualization and live crypto/steganography presentation surfaces"
+}

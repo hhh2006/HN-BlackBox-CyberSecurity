@@ -1,7 +1,7 @@
 {
   "name": "HN BlackBox",
-  "version": "20.1",
-  "codename": "Organized Cybersecurity Learning and Engineering Suite",
+  "version": "40.0.0",
+  "codename": "SOVEREIGN HOLOGRAPHIC OVERLAY",
   "identity": "HN",
   "language": [
     "ar",
@@ -12,39 +12,22 @@
   },
   "future_modules": [],
   "features": [
-    "Animated identity splash screen with current OS username",
-    "Glass-like cybersecurity cards and fixed navigation rail",
-    "Algorithm-specific step-by-step live visualizations",
-    "Populated roadmap modules for Cryptanalysis, Network, Web, Blue Team and Labs",
-    "HN BLACKBOX visual identity and generated application icon",
-    "Local audit history and English-only interface",
-    "Wheel handling isolated to scrollable canvases to prevent page jumps",
-    "Command-center dashboard inspired by the supplied cyber operations reference",
-    "Responsive desktop/compact navigation and resize-safe layouts",
-    "Real cryptanalysis, network, web-lab, blue-team and offline-lab tools",
-    "Live system telemetry and local audit metrics",
-    "HN monogram application icon with multi-size ICO asset",
-    "Dedicated developer profile with animated platform-core visualization",
-    "Animated under-development beta gate with keyboard confirmation and contribution contact",
-    "Cryptography family selector: requested core, extended and full engine matrix",
-    "Animated cipher-core selector visualization and focused algorithm racks",
-    "Responsive live command channel with animated multi-color telemetry strip",
-    "Resizable live workspace monitor with animated diagnostics scope",
-    "High-contrast HN monogram ASCII identity lockup",
-    "Interactive navigation hover/click states with beta-gated module transitions",
-    "Bilingual developer profile with animated platform-core network visualization",
-    "Content-aware cinematic module gateways and tactical module HUDs",
-    "Searchable History 2.0 with CSV/JSON export and crypto replay",
-    "Local workspace snapshot and restore manager",
-    "Local diagnostics console and exportable build reports",
-    "Offline v17 Lab Environment Engine with 16 deterministic labs",
-    "Persistent lab scoring, hints, attempts and reset",
-    "Full-screen ANSI terminal command center for CMD, PowerShell and Kali/Linux",
-    "Allow-listed terminal crypto, analysis, network, web, blue-team and toolkit commands",
-    "GUI Lab Environment page with interactive cards and terminal launcher"
+    "Cinematic desktop command-center interface with optional local startup audio",
+    "Classical and modern cryptography workspaces with step-by-step explanations",
+    "Cryptanalysis tools and practical analysis workflows",
+    "LSB image steganography with payload and pixel analysis",
+    "Network security diagnostics and visualization",
+    "Controlled web-security and blue-team labs",
+    "Offline security labs with progress, hints, attempts and scoring",
+    "Local file intelligence and security tooling",
+    "Animated WebGL2 presentation layer with foreground-aware rendering",
+    "CLI and interactive console for local workflows",
+    "Arabic and English interface with local history and reporting"
   ],
   "author": {
     "name": "Hani Khaled Nasser Al-Nasseri",
     "role": "Cybersecurity Student & Developer"
-  }
+  },
+  "release": "V40.0.0",
+  "release_status": "Public release candidate"
 }

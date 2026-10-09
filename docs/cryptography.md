@@ -1,12 +1,8 @@
 # Cryptography Map
 
-## Requested algorithms
+## Required classical rack
 
-The main requested set is intentionally isolated under:
-
-`core/cryptography/required_algorithms/`
-
-It contains:
+`core/cryptography/classical/required/` contains the requested set:
 
 1. Caesar
 2. Additive
@@ -14,14 +10,21 @@ It contains:
 4. Affine
 5. Vigenère
 6. Autokey
-7. Rail Fence
+7. Rail Fence (keyless transposition)
+8. Keyed Transposition
+9. Double / Combining Transposition
 
-## Extended algorithms
+## Additional classical rack
 
-Additional implementations live under:
+`core/cryptography/classical/additional/` contains the remaining classical/educational ciphers: Playfair, Hill, Atbash, ROT13, Beaufort, Polybius, ADFGVX, Bacon, Morse, and OTP.
 
-`core/cryptography/extended_algorithms/`
+## Modern rack
 
-This separation makes it possible to change the requested university-learning set without disturbing the rest of the cipher library.
+`core/cryptography/modern/` contains AES, DES, educational RSA, secure RSA, and hashing.
 
-The cryptography UI exposes the requested, extended, and full algorithm views separately.
+## Data hiding and visualization
+
+`core/cryptography/steganography/` contains the complete LSB data-hiding engine.
+`core/cryptography/visualization/` contains presentation-only crypto visualizations.
+
+There is one canonical implementation location per algorithm; legacy duplicate engine trees were removed during V18 cleanup.

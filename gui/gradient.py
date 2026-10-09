@@ -11,7 +11,10 @@ continuous background instead of a patchwork of colored boxes.
 
 import numpy as np
 from PIL import Image
-import customtkinter as ctk
+try:
+    import customtkinter as ctk
+except ImportError:
+    ctk = None
 
 
 def _hex_to_rgb(hex_color: str):
@@ -38,6 +41,9 @@ def build_gradient(width: int, height: int, stops, angle_deg: float = 135) -> Im
     return Image.fromarray(rgb, mode="RGB")
 
 
-def gradient_ctk_image(width: int, height: int, stops, angle_deg: float = 135) -> ctk.CTkImage:
+def gradient_ctk_image(width: int, height: int, stops, angle_deg: float = 135):
+    """Return a CTkImage when the optional CustomTkinter dependency is present."""
+    if ctk is None:
+        raise RuntimeError("gradient_ctk_image requires optional dependency customtkinter.")
     img = build_gradient(width, height, stops, angle_deg)
     return ctk.CTkImage(light_image=img, dark_image=img, size=(width, height))

@@ -1,4 +1,4 @@
-"""HN BlackBox v20.1 offline lab environment engine.
+"""HN BlackBox V40 offline lab environment engine.
 Safe, deterministic labs: no network access, no arbitrary command execution.
 """
 from __future__ import annotations

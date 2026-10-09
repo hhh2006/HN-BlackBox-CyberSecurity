@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "HN BlackBox CyberSecurity"
+version: "40.0.0"
+type: software
+message: "If HN BlackBox helps your work, please cite the repository."
+authors:
+  - family-names: "Al-Nasseri"
+    given-names: "Hani Khaled Nasser"
+    alias: "HN"
+repository-code: "https://github.com/hhh2006/HN-BlackBox-CyberSecurity"
+license: MIT
+abstract: "A local-first cybersecurity learning and engineering workspace covering cryptography, cryptanalysis, network security, blue-team workflows, security labs, and defensive tooling."

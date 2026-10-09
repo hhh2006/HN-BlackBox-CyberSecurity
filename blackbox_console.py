@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""HN BlackBox v20.1 — interactive terminal console.
+"""HN BlackBox v40.0.0 — interactive terminal console.
 Runs locally and exposes an allow-listed security/learning command set.
 It intentionally does not execute arbitrary OS shell commands.
 """
@@ -18,7 +18,10 @@ CSI='\033['
 def c(code,s=''): return f'{CSI}{code}m{s}{CSI}0m'
 CY=CSI+'96m'; GR=CSI+'92m'; YL=CSI+'93m'; RD=CSI+'91m'; PR=CSI+'95m'; DIM=CSI+'90m'; WH=CSI+'97m'; BL=CSI+'94m'
 
-def clear(): os.system('cls' if os.name=='nt' else 'clear')
+def clear():
+    # Avoid shell invocation; emit terminal control sequences directly.
+    sys.stdout.write('\033[2J\033[H')
+    sys.stdout.flush()
 def banner():
     clear()
     print(c('96','╔══════════════════════════════════════════════════════════════════╗'))
@@ -29,7 +32,7 @@ def banner():
     print(c('96','║')+c('97','   ██║  ██║██║ ╚████║    ██████╔╝███████╗╚██████╔╝╚██████╗        ')+c('96','║'))
     print(c('96','║')+c('97','   ╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝        ')+c('96','║'))
     print(c('96','║                                                                  ║'))
-    print(c('96','║')+c('97','              H N   B L A C K B O X   v20.1                       ')+c('96','║'))
+    print(c('96','║')+c('97','              H N   B L A C K B O X   v40.0.0                       ')+c('96','║'))
     print(c('96','║')+c('90','          CYBER / CRYPTO / LAB / DEFENSE WORKSPACE                ')+c('96','║'))
     print(c('96','╚══════════════════════════════════════════════════════════════════╝'))
     print(f"  {GR}● ONLINE{c('0','')}  {DIM}LOCAL-FIRST  •  SAFE LAB MODE  •  {platform.system()} {platform.release()}{c('0','')}")
@@ -96,7 +99,9 @@ class Console:
         if cmd in ('caesar','vigenere','railfence','affine','atbash','rot13'):
             if cmd in ('atbash','rot13'):
                 if len(a)<2: return 'Usage: '+cmd+' encrypt "TEXT"'
-                text=a[1]; out=classical.atbash(text) if cmd=='atbash' else classical.rot13(text)
+                text=a[1]
+                from core.cryptography.classical.additional import atbash, rot13
+                out=atbash.atbash(text) if cmd=='atbash' else rot13.rot13(text)
                 return self.result(cmd,text,out)
             if len(a)<3: return 'Usage: '+cmd+' encrypt|decrypt "TEXT" KEY'
             op,text,key=a[0].lower(),a[1],a[2]
@@ -187,7 +192,7 @@ class Console:
         l=self.lab.start(a[0]); return f"{l['id']} // {l['title']}\n{l['prompt']}\nHINT: {l['hint']}"
 
 def main():
-    ap=argparse.ArgumentParser(description='HN BlackBox v20.1 terminal console')
+    ap=argparse.ArgumentParser(description='HN BlackBox v40.0.0 terminal console')
     ap.add_argument('command',nargs='*',help='optional one-shot BlackBox command')
     ns=ap.parse_args(); app=Console()
     if ns.command:

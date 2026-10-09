@@ -1,92 +1,73 @@
-# HN BlackBox // CyberSecurity
+# HN BlackBox CyberSecurity
 
-**A local-first cybersecurity learning and engineering workspace built by Hani Khaled Nasser Al-Nasseri (HN).**
+**HN BlackBox** is my cybersecurity learning and engineering project. I built it to turn the topics I study into practical software that I can test, improve, and keep using as I learn more.
 
-HN BlackBox started as a student project for learning cybersecurity and turning university assignments and difficult technical topics into practical software. It has grown into a modular workspace covering cryptography, cryptanalysis, network security, web-security labs, blue-team exercises, security tooling, local intelligence, and hands-on labs.
+The project brings several areas together in one desktop workspace: cryptography, cryptanalysis, network security, web-security labs, blue-team exercises, security tools, local intelligence, and hands-on labs.
 
-The project is intentionally built to keep growing: new concepts, university projects, experiments, and tools can be added without turning the whole codebase into one large file.
+> **Educational / defensive use:** only test systems, applications, networks, and data that you own or are explicitly authorized to test.
 
-> **Educational / defensive scope:** use the project only on systems, networks, applications, and data that you own or are explicitly authorized to test.
+## Highlights
 
-## What is inside?
+- **Cryptography:** classical ciphers, extended algorithms, AES utilities, and algorithm-focused visual explanations.
+- **Cryptanalysis:** frequency analysis, coincidence analysis, Kasiski-style analysis, and related tools.
+- **Modern Security:** DES, AES-256, RSA, hashing, and step-by-step teaching views.
+- **Steganography:** image-based LSB hiding/extraction with pixel and payload analysis.
+- **Network Security:** local network inspection, diagnostics, graphs, and defensive utilities.
+- **Web Security:** controlled educational web-security labs.
+- **Blue Team:** defensive analysis, rules, and investigation workflows.
+- **Security Labs:** deterministic offline labs with progress, hints, attempts, and scoring.
+- **File Intelligence:** hashes, metadata, entropy, strings, and related local analysis.
+- **Desktop GUI:** a dark HN command-center interface with animated visual effects and live local status views.
+- **CLI / Console:** local command-line workflows for Windows and Linux/Kali.
 
-- **Cryptography** — classical ciphers, AES utilities, and an organized algorithm matrix.
-- **Requested cipher set** — Caesar, Additive, Multiplicative, Affine, Vigenère, Autokey, and Rail Fence in one dedicated folder.
-- **Cryptanalysis** — frequency analysis, coincidence analysis, Kasiski-style analysis, and related helpers.
-- **Network Security** — local network inspection, network graphs, and defensive utilities.
-- **Web Security** — controlled educational web-security lab functionality.
-- **Blue Team** — defensive rules, analysis helpers, and blue-team workflows.
-- **Security Labs** — deterministic offline labs, progress tracking, hints, and scoring.
-- **Intelligence** — local investigation, evidence, and intelligence-oriented analysis modules.
-- **Security Tools** — diagnostics, hardening helpers, local tooling, and encrypted storage utilities.
-- **Platform** — history, workflows, plugins, reporting, and command-center components.
-- **Live GUI** — an animated cybersecurity operations-style interface built with Tkinter/CustomTkinter.
-- **CLI / Console** — command-line and allow-listed terminal workflows for local use.
+## Cryptography
 
-## Cryptography organization
-
-The seven requested algorithms live here:
+The core requested classical algorithms are kept together under `core/cryptography/required_algorithms/`:
 
 ```text
-core/
-└── cryptography/
-    ├── required_algorithms/
-    │   ├── caesar.py
-    │   ├── additive.py
-    │   ├── multiplicative.py
-    │   ├── affine.py
-    │   ├── vigenere.py
-    │   ├── autokey.py
-    │   └── rail_fence.py
-    └── extended_algorithms/
-        ├── aes_cipher.py
-        ├── classical.py
-        ├── hill_cipher.py
-        ├── playfair.py
-        └── additional cipher implementations
+caesar.py
+additive.py
+multiplicative.py
+affine.py
+vigenere.py
+autokey.py
+rail_fence.py
 ```
 
-The other cryptography options remain available through the **Extended** and **Full** views in the application.
+The application also exposes additional classical and modern algorithms through the extended/full views.
 
-## Project structure
+## Project layout
 
 ```text
-HN-BlackBox-CyberSecurity/
-├── core/
-│   ├── cryptography/
-│   ├── cryptanalysis/
-│   ├── network_security/
-│   ├── web_security/
-│   ├── blue_team/
-│   ├── security_labs/
-│   ├── intelligence/
-│   ├── security_tools/
-│   └── platform/
-├── gui/
-├── tests/
-├── assets/
-├── docs/
-├── plugins/
-├── main.py
-├── blackbox_cli.py
-├── blackbox_console.py
-└── requirements.txt
+core/                  Core security and cryptography logic
+gui/                   Desktop application
+renderer/              WebGL2 cinematic renderer
+tests/                 Automated tests
+docs/                  Current documentation and project history
+docs/site/             GitHub Pages visual site
+assets/                Application assets
+plugins/               Plugin area
+main.py                GUI entry point
+blackbox_cli.py        CLI entry point
+blackbox_console.py    Interactive console
 ```
 
-A full explanation of the folders is available in [`docs/architecture.md`](docs/architecture.md).
+More details are in [`docs/architecture.md`](docs/architecture.md).
 
-## Run the project
+## Run it
 
-### Python GUI
+### Windows
 
-```bash
-python main.py
-```
-
-### Windows launcher
+The easiest option is:
 
 ```text
 run_windows.bat
+```
+
+For the desktop application directly:
+
+```bash
+python main.py
 ```
 
 ### CLI
@@ -101,7 +82,7 @@ python blackbox_cli.py --help
 python blackbox_console.py
 ```
 
-Linux/Kali launcher:
+### Linux / Kali
 
 ```bash
 ./run_blackbox_cli.sh
@@ -109,7 +90,7 @@ Linux/Kali launcher:
 
 ## Installation
 
-Python 3.11+ is recommended.
+Python 3.11 or newer is recommended.
 
 ```bash
 python -m venv .venv
@@ -127,55 +108,55 @@ Linux/macOS:
 source .venv/bin/activate
 ```
 
-Then:
+Then install the Python dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
+The optional WebGL renderer has its own Node/Vite dependencies in `renderer/`.
+
 ## Testing
 
-The project includes core, GUI, cipher, lab, and tooling tests.
+Run the test suite with:
 
 ```bash
 pytest -q
 ```
 
-On Linux CI, the GUI tests can run under Xvfb.
+The project is tested locally and in CI. GUI tests on Linux can run under Xvfb.
 
-## Why I built it
+## Visual renderer
 
-I am **Hani Khaled Nasser Al-Nasseri**, a cybersecurity student at **Al-Razi University in Yemen**. HN BlackBox is my long-term learning and engineering project. I use it to practice what I study, turn university work into reusable software, and keep difficult cybersecurity concepts in one place where I can continue improving them.
+The cinematic layer uses WebGL2 with Three.js, GSAP, PixiJS, and tsParticles. It is a presentation layer; cryptographic operations remain in the Python application and are not replaced by browser-side mock implementations.
 
-The goal is not to present a finished commercial security product. The goal is to build a serious portfolio project that demonstrates continuous learning, software engineering, cybersecurity fundamentals, testing, documentation, and the ability to grow a codebase over time.
+The GitHub Pages site contains a visual demonstration. Telemetry shown there is synthetic presentation data unless explicitly identified as a real local measurement.
+
+## Project history
+
+HN BlackBox has gone through several internal iterations. The current public release is **V40.0.0 — SOVEREIGN HOLOGRAPHIC OVERLAY**.
+
+Older development notes are kept in [`docs/history/`](docs/history/) where they are useful for understanding how the project evolved. The current documentation describes V40 rather than those earlier iterations.
+
+See [`CHANGELOG.md`](CHANGELOG.md) for the consolidated release history.
 
 ## Author
 
 **Hani Khaled Nasser Al-Nasseri**  
-*Cybersecurity Student & Developer*
+Cybersecurity Student & Developer
 
-HN BlackBox CyberSecurity is developed and maintained as a long-term cybersecurity learning and engineering project.
+This is a personal long-term project that I develop while studying cybersecurity and building practical experience.
 
-### Contact & Contributions
-
-If you would like to contribute, report a bug, suggest an improvement, or discuss collaboration:
-
-- **Email:** alnasryhany185@gmail.com
-- **GitHub:** Use Issues and Pull Requests in this repository.
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution guidelines.
-
-## Roadmap
-
-The project is intentionally open-ended. Planned areas include stronger cryptography education, deeper network analysis, additional defensive labs, better reporting, more automated tests, improved plugin architecture, and additional blue-team workflows.
+- Email: `alnasryhany185@gmail.com`
+- GitHub: `hhh2006`
 
 ## Contributing
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Bug reports, improvements, and pull requests are welcome. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Security
 
-See [`SECURITY.md`](SECURITY.md).
+For security issues, please read [`SECURITY.md`](SECURITY.md) before opening a public issue.
 
 ## License
 

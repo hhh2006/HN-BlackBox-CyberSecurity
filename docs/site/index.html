@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="HN BlackBox V40.0.0 — local-first cybersecurity learning and engineering command center with a cinematic WebGL2 visualization layer.">
+<meta name="theme-color" content="#020707">
+<meta property="og:title" content="HN BlackBox V40.0.0">
+<meta property="og:description" content="Local-first cybersecurity learning and engineering command center with cinematic WebGL2 visualization.">
+<meta property="og:type" content="website">
+<title>HN BlackBox // V40 Cinematic Demo</title>
+<style>
+:root{color-scheme:dark;--c:#00ffcc;--b:#00aaff;--bg:#020707}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 50% 0,#0a2827 0,#030909 45%,#010303 100%);color:#d9fffa;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}body{display:grid;place-items:center;padding:28px}.shell{width:min(1180px,100%);border:1px solid #00ffcc55;background:#020909cc;box-shadow:0 0 60px #00ffcc12,inset 0 0 60px #00aaff08;overflow:hidden}.top{padding:18px 22px;border-bottom:1px solid #00ffcc33;display:flex;justify-content:space-between;gap:20px}.brand{letter-spacing:5px;color:var(--c);font-size:clamp(18px,3vw,30px)}.status{color:#7aa6a2;font-size:11px;align-self:end}.stage{position:relative;height:560px}.stage canvas{width:100%;height:100%;display:block}.hud{position:absolute;left:24px;right:24px;bottom:22px;border:1px solid #00ffcc44;background:#010707b8;backdrop-filter:blur(12px);padding:14px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.metric{padding:9px;border-left:2px solid var(--c);background:#00ffcc06}.metric small{display:block;color:#638985;font-size:9px}.metric b{color:#d9fffa;font-size:14px}@media(max-width:700px){.hud{grid-template-columns:repeat(2,1fr)}.stage{height:480px}}
+</style></head>
+<body><main class="shell"><header class="top"><div class="brand">HN // BLACKBOX</div><div class="status">CINEMATIC DEMO // SYNTHETIC TELEMETRY // AUTONOMOUS</div></header><section class="stage"><canvas id="c"></canvas><div class="hud"><div class="metric"><small>SIGNAL</small><b id="sig">98.4%</b></div><div class="metric"><small>RX</small><b id="rx">084.2</b></div><div class="metric"><small>TX</small><b id="tx">071.9</b></div><div class="metric"><small>SEQ</small><b id="seq">2048</b></div><div class="metric"><small>ENGINE</small><b>ONLINE</b></div></div></section></main>
+<script>
+const c=document.getElementById('c'),x=c.getContext('2d'),DPR=Math.min(devicePixelRatio||1,2);let t=0,seq=2048;const bars=64;
+function resize(){c.width=c.clientWidth*DPR;c.height=c.clientHeight*DPR;x.setTransform(DPR,0,0,DPR,0,0)}addEventListener('resize',resize);resize();
+function frame(ms){t=ms/1000;const w=c.clientWidth,h=c.clientHeight;x.clearRect(0,0,w,h);const g=x.createRadialGradient(w*.72,h*.45,10,w*.72,h*.45,w*.75);g.addColorStop(0,'#08302d');g.addColorStop(1,'#010505');x.fillStyle=g;x.fillRect(0,0,w,h);
+ x.strokeStyle='#00ffcc16';x.lineWidth=1;const drift=(t*14)%48;for(let xx=-48+drift;xx<w;xx+=48){x.beginPath();x.moveTo(xx,0);x.lineTo(xx,h);x.stroke()}for(let yy=-48+drift;yy<h;yy+=48){x.beginPath();x.moveTo(0,yy);x.lineTo(w,yy);x.stroke()}
+ const cx=w*.72,cy=h*.45;for(let r=44;r<190;r+=44){x.beginPath();x.arc(cx,cy,r,0,Math.PI*2);x.strokeStyle='#00ffcc2b';x.stroke()}x.beginPath();x.moveTo(cx,cy);x.lineTo(cx+170*Math.cos(t*.9),cy+170*Math.sin(t*.9));x.strokeStyle='#00ffcc';x.shadowBlur=18;x.shadowColor='#00ffcc';x.stroke();x.shadowBlur=0;
+ const bw=Math.max(3,(w*.58)/bars-2);for(let i=0;i<bars;i++){const v=(Math.sin(t*2.1+i*.73)+Math.sin(t*1.17+i*.19)+2)/4;const bh=20+v*(h*.34);const bx=20+i*(bw+2);x.fillStyle=i%9===0?'#00aaff':'#00ffcc';x.globalAlpha=.22+v*.65;x.fillRect(bx,h-40-bh,bw,bh)}x.globalAlpha=1;
+ document.getElementById('sig').textContent=(97+Math.sin(t*.8)*2).toFixed(1)+'%';document.getElementById('rx').textContent=(82+Math.sin(t*1.7)*8).toFixed(1);document.getElementById('tx').textContent=(70+Math.cos(t*1.3)*7).toFixed(1);document.getElementById('seq').textContent=String(Math.floor(seq+t*8));requestAnimationFrame(frame)}requestAnimationFrame(frame);
+</script></body></html>

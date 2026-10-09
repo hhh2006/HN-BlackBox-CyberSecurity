@@ -50,6 +50,17 @@ def _save(entries: list[dict], path: str = DEFAULT_PATH) -> None:
         return
 
 
+def _safe_key_display(value: str) -> str:
+    """Prevent the local audit trail from becoming a plaintext key vault."""
+    text = str(value or "")
+    if not text:
+        return ""
+    # Preserve a little context for operators without persisting secret material.
+    if len(text) <= 4:
+        return "••••"
+    return text[:2] + "••••" + text[-2:]
+
+
 def add_entry(
     algorithm: str,
     operation: str,
@@ -65,7 +76,7 @@ def add_entry(
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "algorithm": algorithm,
             "operation": operation,
-            "key": key_display,
+            "key": _safe_key_display(key_display),
             "input": input_text,
             "output": output_text,
         },

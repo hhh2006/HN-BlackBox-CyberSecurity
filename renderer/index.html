@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <title>HN BLACKBOX // CINEMATIC SECURITY CORE // GPU</title>
+</head>
+<body>
+  <!-- HN BLACKBOX // Non-destructive holographic overlay. Pointer-transparent and independent of the existing UI. -->
+  <div id="hn-holo-overlay" class="hn-holo-overlay" aria-hidden="true"></div>
+  <div id="app">
+    <canvas id="gpu-canvas" aria-hidden="true"></canvas><div id="gpu-hud" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="hud-vignette" aria-hidden="true"></div><div class="hud-grid" aria-hidden="true"></div>
+    <main id="hud">
+      <header class="topbar glass-panel">
+        <div><div class="eyebrow">HN // BLACKBOX // SECURE VISUAL CORE</div><h1 id="title">HN BLACKBOX // MODERN SECURITY</h1></div>
+        <div class="status"><span class="dot"></span><span id="mode">GPU // ONLINE</span></div>
+      </header>
+      <section class="hero glass-panel" id="hero">
+        <div class="hero-scan"></div><div class="hero-reticle" aria-hidden="true"></div><div class="hero-data-stream" id="hero-data-stream" aria-hidden="true">7F 4A 2C // 9D F1 // HN-BLACKBOX // LOCAL BUS // ENCRYPTED</div><div class="hero-copy"><div class="eyebrow" id="section-kicker"></div><div class="hero-code" id="hero-code"></div><p id="hero-description"></p></div>
+        <div class="metrics"><div><b id="fps">--</b><span>FPS</span></div><div><b id="pipeline">GPU</b><span>PIPELINE</span></div><div><b>LOCAL</b><span>EXECUTION</span></div></div>
+      </section>
+
+      <section id="modern-deck" class="deck glass-panel" hidden>
+        <div class="deck-head"><div><span class="panel-title">01 // MODERN SECURITY DECK</span><h2>CRYPTOGRAPHIC EXECUTION MATRIX</h2></div><span class="badge" id="algo-badge">AES-256-GCM / AUTHENTICATED</span></div>
+        <div class="crypto-layout">
+          <aside class="control-rail">
+            <label>ALGORITHM<select id="crypto-algo"><option>AES</option><option>DES</option></select></label>
+            <label>OPERATION<select id="crypto-op"><option value="encrypt">ENCRYPT</option><option value="decrypt">DECRYPT</option></select></label>
+            <label>KEY<input id="crypto-key" type="password" autocomplete="off" placeholder="SECURE KEY MATERIAL" /></label>
+            <button class="neon primary" id="crypto-exec">EXECUTE CORE</button>
+            <button class="neon" id="crypto-reset">RESET TRACE</button>
+            <div class="rail-note">AES uses browser Web Crypto with authenticated GCM. DES is explicitly educational/legacy in this standalone visual layer.</div>
+          </aside>
+          <div class="io-stack">
+            <div class="field-card"><div class="field-head"><span>INPUT PAYLOAD</span><span>UTF-8</span></div><textarea id="crypto-input" placeholder="ENTER PLAINTEXT OR CIPHERTEXT"></textarea></div>
+            <div class="field-card output"><div class="field-head"><span>OUTPUT PAYLOAD</span><button class="copy-btn" id="copy-encrypted">⧉ COPY</button></div><textarea id="crypto-output" readonly placeholder="EXECUTION OUTPUT"></textarea></div>
+          </div>
+        </div>
+        <div class="trace-card"><div class="trace-head"><div><span class="panel-title">02 // LIVE ROUND TELEMETRY</span><span id="operation-status">READY</span></div><div class="trace-actions"><button class="icon-btn" id="crypto-back">‹ STEP</button><button class="icon-btn play" id="crypto-play"><span id="play-label">PLAY</span></button><button class="icon-btn" id="crypto-step">STEP ›</button></div></div><div class="progress"><i id="progress-fill"></i></div><div class="trace-meta"><span>ROUND MATRIX</span><b id="round-counter">0 / 10</b></div><div id="matrix-grid" class="matrix-grid"></div></div>
+      </section>
+
+      <section id="stego-deck" class="deck glass-panel" hidden>
+        <div class="deck-head"><div><span class="panel-title">01 // STEGANOGRAPHY DECK</span><h2>COVERT IMAGE OPERATIONS</h2></div><span class="badge green">RGB / LSB / CRC32</span></div>
+        <div class="mode-switch"><button data-stego-op="hide" class="active">HIDE TEXT IN IMAGE</button><button data-stego-op="extract">EXTRACT TEXT FROM IMAGE</button></div>
+        <div class="stego-layout">
+          <div class="image-zone">
+            <div id="dropzone" class="dropzone"><div class="drop-icon">⌁</div><b>DROP IMAGE HERE</b><span>PNG / BMP / JPG / WEBP • LOCAL ONLY</span><input id="image-input" type="file" accept="image/png,image/bmp,image/jpeg,image/webp" hidden /></div>
+            <div class="image-frame" id="source-frame"><img id="source-image" hidden alt="Source image preview"/><canvas id="source-canvas"></canvas><div class="frame-corners"></div></div>
+            <div class="image-meta"><span id="image-meta">NO IMAGE LOADED</span><b id="capacity-readout">-- BYTES</b></div>
+          </div>
+          <div class="operation-zone">
+            <div id="hide-panel" class="operation-panel"><label>SECRET PAYLOAD<textarea id="secret-text" placeholder="ENTER TEXT TO HIDE"></textarea></label><button class="neon primary" id="hide-btn">GENERATE COVERT IMAGE</button><div class="result-frame" id="output-frame"><img id="stego-output" hidden alt="Stego output preview"/><a id="download-stego" hidden>DOWNLOAD PNG</a></div></div>
+            <div id="extract-panel" class="operation-panel" hidden><label>EXTRACTED PAYLOAD<textarea id="extract-output" readonly placeholder="HIDDEN TEXT WILL APPEAR HERE"></textarea></label><button class="neon primary" id="extract-btn">RUN FORENSIC EXTRACTION</button><button class="copy-btn wide" id="copy-extracted">⧉ COPY EXTRACTED TEXT</button></div>
+            <div class="status-line"><span class="dot"></span><span id="stego-status">READY</span></div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer glass-panel"><span>HN BLACKBOX // LOCAL VISUALIZATION LAYER</span><span id="quality">QUALITY // AUTO</span></footer>
+    </main><div id="toast-root"></div>
+  </div><script type="module" src="/src/main.js"></script>
+</body></html>

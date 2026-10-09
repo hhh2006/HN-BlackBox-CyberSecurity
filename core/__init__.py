@@ -5,10 +5,12 @@ organized by domain for easier maintenance and contribution.
 """
 
 # Cryptography
-from .cryptography.extended_algorithms import (
-    affine, autokey, caesar, vigenere, rail_fence, aes_cipher,
-    classical, hill_cipher, playfair,
+from .cryptography.classical import (
+    affine, autokey, caesar, vigenere, rail_fence,
+    hill_cipher, playfair, additive, multiplicative,
 )
+from .cryptography import classical
+from .cryptography.modern import aes_cipher
 
 # Analysis
 from .cryptanalysis import cryptanalysis, frequency_analysis, crypto_intel
@@ -33,5 +35,5 @@ __all__ = [
     "lab_engine", "lab_progress", "intelligence", "investigation", "evidence",
     "pro_intelligence", "real_tools", "security_hardening", "vault", "diagnostics",
     "command_center", "history_manager", "plugin_system", "reporting", "workflows",
-    "workflow_engine",
+    "workflow_engine", "additive", "multiplicative",
 ]
