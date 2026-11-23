@@ -28,7 +28,9 @@
 
   <rect width="1200" height="360" fill="url(#bg)"/>
   <rect width="1200" height="360" fill="url(#grid)"/>
-  <ellipse cx="600" cy="180" rx="520" ry="200" fill="url(#halo)"/>
+  <ellipse cx="600" cy="180" rx="520" ry="200" fill="url(#halo)">
+    <animate attributeName="opacity" values="0.55;0.9;0.55" dur="4.5s" repeatCount="indefinite"/>
+  </ellipse>
 
   <!-- double frame -->
   <rect x="16" y="16" width="1168" height="328" fill="none" stroke="#168BFF" stroke-opacity="0.32" stroke-width="1.5"/>
@@ -55,7 +57,9 @@
 
   <text x="600" y="218" text-anchor="middle" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="18" font-weight="600" letter-spacing="8" fill="#00D9FF">CYBERSECURITY COMMAND CENTER</text>
 
-  <rect x="430" y="238" width="340" height="2" fill="url(#rule)"/>
+  <rect x="430" y="238" width="340" height="2" fill="url(#rule)">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+  </rect>
 
   <text x="600" y="276" text-anchor="middle" font-family="Consolas,'Cascadia Mono','Courier New',monospace" font-size="14" letter-spacing="4" fill="#C7D0DC" fill-opacity="0.85">V40.0.0 · SOVEREIGN HOLOGRAPHIC OVERLAY</text>
 
