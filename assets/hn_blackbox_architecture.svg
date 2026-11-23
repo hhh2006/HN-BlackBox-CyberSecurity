@@ -36,22 +36,22 @@
 
   <g font-family="'Segoe UI',Helvetica,Arial,sans-serif">
     <g>
-      <rect x="60" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"/>
+      <rect x="60" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.85;0.35" dur="3.2s" repeatCount="indefinite"/></rect>
       <text x="175" y="142" text-anchor="middle" font-size="14" font-weight="600" fill="#F1F5F9">Desktop GUI</text>
       <text x="175" y="163" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10.5" fill="#C7D0DC" fill-opacity="0.75">main.py</text>
     </g>
     <g>
-      <rect x="310" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"/>
+      <rect x="310" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.85;0.35" dur="3.2s" begin="0.3s" repeatCount="indefinite"/></rect>
       <text x="425" y="142" text-anchor="middle" font-size="14" font-weight="600" fill="#F1F5F9">CLI</text>
       <text x="425" y="163" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10.5" fill="#C7D0DC" fill-opacity="0.75">blackbox_cli.py</text>
     </g>
     <g>
-      <rect x="560" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"/>
+      <rect x="560" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.85;0.35" dur="3.2s" begin="0.6s" repeatCount="indefinite"/></rect>
       <text x="675" y="142" text-anchor="middle" font-size="14" font-weight="600" fill="#F1F5F9">Interactive Console</text>
       <text x="675" y="163" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10.5" fill="#C7D0DC" fill-opacity="0.75">blackbox_console.py</text>
     </g>
     <g>
-      <rect x="810" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"/>
+      <rect x="810" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"><animate attributeName="stroke-opacity" values="0.35;0.85;0.35" dur="3.2s" begin="0.9s" repeatCount="indefinite"/></rect>
       <text x="925" y="142" text-anchor="middle" font-size="14" font-weight="600" fill="#F1F5F9">WebGL2 Renderer</text>
       <text x="925" y="163" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10.5" fill="#C7D0DC" fill-opacity="0.75">renderer/</text>
     </g>

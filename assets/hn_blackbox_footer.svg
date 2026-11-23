@@ -19,9 +19,9 @@
   </defs>
 
   <rect x="0.5" y="0.5" width="1199" height="123" fill="url(#plate)" stroke="#168BFF" stroke-opacity="0.35"/>
-  <rect x="0" y="0" width="1200" height="3" fill="url(#edge)"/>
+  <rect x="0" y="0" width="1200" height="3" fill="url(#edge)"><animate attributeName="opacity" values="0.45;1;0.45" dur="3s" repeatCount="indefinite"/></rect>
 
-  <text x="48" y="86" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="60" font-weight="700" letter-spacing="4" fill="url(#mono)">HN</text>
+  <text x="48" y="86" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="60" font-weight="700" letter-spacing="4" fill="url(#mono)">HN<animate attributeName="fill-opacity" values="0.78;1;0.78" dur="3.5s" repeatCount="indefinite"/></text>
 
   <line x1="176" y1="26" x2="176" y2="98" stroke="#168BFF" stroke-opacity="0.6"/>
   <rect x="171" y="55" width="10" height="10" transform="rotate(45 176 60)" fill="#00D9FF"/>
