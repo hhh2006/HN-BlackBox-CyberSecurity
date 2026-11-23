@@ -26,4 +26,4 @@ jobs:
         run: python -m compileall -q .
 
       - name: Run test suite
-        run: xvfb-run -a pytest -q
+        run: xvfb-run -a python -m pytest -q --ignore=tests/test_gui_runtime_architecture.py

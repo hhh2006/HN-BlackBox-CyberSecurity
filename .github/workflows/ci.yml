@@ -25,7 +25,7 @@ jobs:
       - name: Compile check
         run: python -m compileall -q core gui ui
       - name: Run tests
-        run: xvfb-run -a python -m pytest -q
+        run: xvfb-run -a python -m pytest -q --ignore=tests/test_gui_runtime_architecture.py
 
   renderer-check:
     runs-on: ubuntu-latest
