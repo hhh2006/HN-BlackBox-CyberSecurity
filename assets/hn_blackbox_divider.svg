@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 44" width="1200" height="44" role="img" aria-labelledby="title desc">
+  <title id="title">HN BlackBox section divider</title>
+  <desc id="desc">Twin data rails with a centered HN bracket node.</desc>
+
+  <defs>
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#168BFF" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#168BFF" stop-opacity="0.8"/>
+      <stop offset="0.5" stop-color="#00D9FF" stop-opacity="1"/>
+      <stop offset="0.7" stop-color="#168BFF" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#168BFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="17" width="1200" height="1.5" fill="url(#rail)"/>
+  <rect x="0" y="26" width="1200" height="1.5" fill="url(#rail)" opacity="0.45"/>
+
+  <g fill="none" stroke="#00D9FF" stroke-width="2">
+    <path d="M566 10h-14v24h14"/>
+    <path d="M634 10h14v24h-14"/>
+  </g>
+  <rect x="576" y="14" width="48" height="16" fill="#0B1220" stroke="#168BFF" stroke-opacity="0.7"/>
+  <text x="600" y="26" text-anchor="middle" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#00D9FF">HN</text>
+
+  <g fill="#168BFF" fill-opacity="0.7">
+    <rect x="180" y="15" width="3" height="14"/>
+    <rect x="1017" y="15" width="3" height="14"/>
+  </g>
+</svg>

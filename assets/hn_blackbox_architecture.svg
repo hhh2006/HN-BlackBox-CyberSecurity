@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" width="1100" height="560" role="img" aria-labelledby="title desc">
+  <title id="title">HN BlackBox system architecture</title>
+  <desc id="desc">Three-layer architecture: presentation layer (GUI, CLI, console, WebGL2 renderer), core security modules under core/, and the foundation layer (tests, documentation, CI, plugins).</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#080B12"/>
+    </linearGradient>
+    <linearGradient id="band1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00D9FF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#168BFF" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="band2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#168BFF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#00D9FF" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="band3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#C7D0DC" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#168BFF" stop-opacity="0.3"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#00D9FF"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="560" fill="url(#bg)"/>
+  <rect x="12" y="12" width="1076" height="536" fill="none" stroke="#168BFF" stroke-opacity="0.3"/>
+
+  <text x="550" y="46" text-anchor="middle" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="4" fill="#F1F5F9">HN BLACKBOX — SYSTEM ARCHITECTURE</text>
+  <text x="550" y="68" text-anchor="middle" font-family="Consolas,'Cascadia Mono','Courier New',monospace" font-size="12" letter-spacing="2" fill="#C7D0DC" fill-opacity="0.7">main.py · blackbox_cli.py · blackbox_console.py · renderer/ · tests/</text>
+
+  <!-- 01 presentation -->
+  <rect x="60" y="92" width="4" height="14" fill="url(#band1)"/>
+  <text x="74" y="104" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="4" fill="#00D9FF">01 · PRESENTATION LAYER</text>
+
+  <g font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+    <g>
+      <rect x="60" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"/>
+      <text x="175" y="142" text-anchor="middle" font-size="14" font-weight="600" fill="#F1F5F9">Desktop GUI</text>
+      <text x="175" y="163" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10.5" fill="#C7D0DC" fill-opacity="0.75">main.py</text>
+    </g>
+    <g>
+      <rect x="310" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"/>
+      <text x="425" y="142" text-anchor="middle" font-size="14" font-weight="600" fill="#F1F5F9">CLI</text>
+      <text x="425" y="163" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10.5" fill="#C7D0DC" fill-opacity="0.75">blackbox_cli.py</text>
+    </g>
+    <g>
+      <rect x="560" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"/>
+      <text x="675" y="142" text-anchor="middle" font-size="14" font-weight="600" fill="#F1F5F9">Interactive Console</text>
+      <text x="675" y="163" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10.5" fill="#C7D0DC" fill-opacity="0.75">blackbox_console.py</text>
+    </g>
+    <g>
+      <rect x="810" y="114" width="230" height="64" fill="#0B1220" stroke="#00D9FF" stroke-opacity="0.5"/>
+      <text x="925" y="142" text-anchor="middle" font-size="14" font-weight="600" fill="#F1F5F9">WebGL2 Renderer</text>
+      <text x="925" y="163" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10.5" fill="#C7D0DC" fill-opacity="0.75">renderer/</text>
+    </g>
+  </g>
+
+  <line x1="550" y1="182" x2="550" y2="212" stroke="#00D9FF" stroke-opacity="0.8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 02 core -->
+  <rect x="60" y="218" width="4" height="14" fill="url(#band2)"/>
+  <text x="74" y="230" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="4" fill="#00D9FF">02 · CORE SECURITY MODULES</text>
+
+  <g font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+    <g>
+      <rect x="60" y="242" width="180" height="76" fill="#0B1220" stroke="#168BFF" stroke-opacity="0.55"/>
+      <text x="150" y="274" text-anchor="middle" font-size="13.5" font-weight="600" fill="#F1F5F9">Cryptography</text>
+      <text x="150" y="297" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="9.5" fill="#C7D0DC" fill-opacity="0.75">core/cryptography/</text>
+    </g>
+    <g>
+      <rect x="260" y="242" width="180" height="76" fill="#0B1220" stroke="#168BFF" stroke-opacity="0.55"/>
+      <text x="350" y="274" text-anchor="middle" font-size="13.5" font-weight="600" fill="#F1F5F9">Cryptanalysis</text>
+      <text x="350" y="297" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="9.5" fill="#C7D0DC" fill-opacity="0.75">core/cryptanalysis/</text>
+    </g>
+    <g>
+      <rect x="460" y="242" width="180" height="76" fill="#0B1220" stroke="#168BFF" stroke-opacity="0.55"/>
+      <text x="550" y="274" text-anchor="middle" font-size="13.5" font-weight="600" fill="#F1F5F9">Network Security</text>
+      <text x="550" y="297" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="9.5" fill="#C7D0DC" fill-opacity="0.75">core/network_security/</text>
+    </g>
+    <g>
+      <rect x="660" y="242" width="180" height="76" fill="#0B1220" stroke="#168BFF" stroke-opacity="0.55"/>
+      <text x="750" y="274" text-anchor="middle" font-size="13.5" font-weight="600" fill="#F1F5F9">Web Security</text>
+      <text x="750" y="297" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="9.5" fill="#C7D0DC" fill-opacity="0.75">core/web_security/</text>
+    </g>
+    <g>
+      <rect x="860" y="242" width="180" height="76" fill="#0B1220" stroke="#168BFF" stroke-opacity="0.55"/>
+      <text x="950" y="274" text-anchor="middle" font-size="13.5" font-weight="600" fill="#F1F5F9">Security Labs</text>
+      <text x="950" y="297" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="9.5" fill="#C7D0DC" fill-opacity="0.75">core/security_labs/</text>
+    </g>
+
+    <g>
+      <rect x="60" y="334" width="180" height="76" fill="#0B1220" stroke="#168BFF" stroke-opacity="0.55"/>
+      <text x="150" y="366" text-anchor="middle" font-size="13.5" font-weight="600" fill="#F1F5F9">Blue Team</text>
+      <text x="150" y="389" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="9.5" fill="#C7D0DC" fill-opacity="0.75">core/blue_team/</text>
+    </g>
+    <g>
+      <rect x="260" y="334" width="180" height="76" fill="#0B1220" stroke="#168BFF" stroke-opacity="0.55"/>
+      <text x="350" y="366" text-anchor="middle" font-size="13.5" font-weight="600" fill="#F1F5F9">Intelligence</text>
+      <text x="350" y="389" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="9.5" fill="#C7D0DC" fill-opacity="0.75">core/intelligence/</text>
+    </g>
+    <g>
+      <rect x="460" y="334" width="180" height="76" fill="#0B1220" stroke="#168BFF" stroke-opacity="0.55"/>
+      <text x="550" y="366" text-anchor="middle" font-size="13.5" font-weight="600" fill="#F1F5F9">Security Tools</text>
+      <text x="550" y="389" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="9.5" fill="#C7D0DC" fill-opacity="0.75">core/security_tools/</text>
+    </g>
+    <g>
+      <rect x="660" y="334" width="180" height="76" fill="#0B1220" stroke="#168BFF" stroke-opacity="0.55"/>
+      <text x="750" y="366" text-anchor="middle" font-size="13.5" font-weight="600" fill="#F1F5F9">Platform</text>
+      <text x="750" y="389" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="9.5" fill="#C7D0DC" fill-opacity="0.75">core/platform/</text>
+    </g>
+    <g>
+      <rect x="860" y="334" width="180" height="76" fill="#0B1220" stroke="#168BFF" stroke-opacity="0.55"/>
+      <text x="950" y="366" text-anchor="middle" font-size="13.5" font-weight="600" fill="#F1F5F9">Rendering</text>
+      <text x="950" y="389" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="9.5" fill="#C7D0DC" fill-opacity="0.75">core/rendering/</text>
+    </g>
+  </g>
+
+  <line x1="550" y1="414" x2="550" y2="444" stroke="#00D9FF" stroke-opacity="0.8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 03 foundation -->
+  <rect x="60" y="450" width="4" height="14" fill="url(#band3)"/>
+  <text x="74" y="462" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="4" fill="#C7D0DC">03 · FOUNDATION AND QUALITY</text>
+
+  <g font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+    <g>
+      <rect x="60" y="474" width="230" height="54" fill="#0B1220" stroke="#C7D0DC" stroke-opacity="0.35"/>
+      <text x="175" y="497" text-anchor="middle" font-size="13" font-weight="600" fill="#F1F5F9">Tests</text>
+      <text x="175" y="516" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10" fill="#C7D0DC" fill-opacity="0.7">tests/ · pytest</text>
+    </g>
+    <g>
+      <rect x="310" y="474" width="230" height="54" fill="#0B1220" stroke="#C7D0DC" stroke-opacity="0.35"/>
+      <text x="425" y="497" text-anchor="middle" font-size="13" font-weight="600" fill="#F1F5F9">Documentation</text>
+      <text x="425" y="516" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10" fill="#C7D0DC" fill-opacity="0.7">docs/</text>
+    </g>
+    <g>
+      <rect x="560" y="474" width="230" height="54" fill="#0B1220" stroke="#C7D0DC" stroke-opacity="0.35"/>
+      <text x="675" y="497" text-anchor="middle" font-size="13" font-weight="600" fill="#F1F5F9">CI Workflows</text>
+      <text x="675" y="516" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10" fill="#C7D0DC" fill-opacity="0.7">.github/workflows/</text>
+    </g>
+    <g>
+      <rect x="810" y="474" width="230" height="54" fill="#0B1220" stroke="#C7D0DC" stroke-opacity="0.35"/>
+      <text x="925" y="497" text-anchor="middle" font-size="13" font-weight="600" fill="#F1F5F9">Plugins</text>
+      <text x="925" y="516" text-anchor="middle" font-family="Consolas,'Courier New',monospace" font-size="10" fill="#C7D0DC" fill-opacity="0.7">plugins/</text>
+    </g>
+  </g>
+</svg>

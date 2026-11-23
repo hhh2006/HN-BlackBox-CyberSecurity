@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-labelledby="title desc">
+  <title id="title">HN BlackBox CyberSecurity — V40.0.0 Sovereign Holographic Overlay</title>
+  <desc id="desc">Cinematic banner for the HN BlackBox cybersecurity command center.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="0.5" stop-color="#080B12"/>
+      <stop offset="1" stop-color="#0B1220"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00D9FF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00D9FF" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00D9FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="word" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F1F5F9"/>
+      <stop offset="1" stop-color="#C7D0DC"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#168BFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#168BFF" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#168BFF" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#bg)"/>
+  <rect width="1200" height="360" fill="url(#grid)"/>
+  <ellipse cx="600" cy="180" rx="520" ry="200" fill="url(#halo)"/>
+
+  <!-- double frame -->
+  <rect x="16" y="16" width="1168" height="328" fill="none" stroke="#168BFF" stroke-opacity="0.32" stroke-width="1.5"/>
+  <rect x="26" y="26" width="1148" height="308" fill="none" stroke="#00D9FF" stroke-opacity="0.12" stroke-width="1"/>
+
+  <!-- top edge ticks -->
+  <g fill="#00D9FF" fill-opacity="0.75">
+    <rect x="560" y="16" width="80" height="3"/>
+    <rect x="140" y="16" width="26" height="3" fill-opacity="0.35"/>
+    <rect x="176" y="16" width="26" height="3" fill-opacity="0.35"/>
+    <rect x="998" y="16" width="26" height="3" fill-opacity="0.35"/>
+    <rect x="1034" y="16" width="26" height="3" fill-opacity="0.35"/>
+  </g>
+
+  <!-- side nodes -->
+  <g fill="#168BFF" fill-opacity="0.85">
+    <rect x="16" y="166" width="6" height="28"/>
+    <rect x="1178" y="166" width="6" height="28"/>
+  </g>
+
+  <text x="600" y="82" text-anchor="middle" font-family="Consolas,'Cascadia Mono','Courier New',monospace" font-size="13" letter-spacing="5" fill="#C7D0DC" fill-opacity="0.72">HANI KHALED NASSER AL-NASSERI · GITHUB HHH2006</text>
+
+  <text x="600" y="176" text-anchor="middle" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="76" font-weight="700" letter-spacing="10" fill="url(#word)">HN BLACKBOX</text>
+
+  <text x="600" y="218" text-anchor="middle" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="18" font-weight="600" letter-spacing="8" fill="#00D9FF">CYBERSECURITY COMMAND CENTER</text>
+
+  <rect x="430" y="238" width="340" height="2" fill="url(#rule)"/>
+
+  <text x="600" y="276" text-anchor="middle" font-family="Consolas,'Cascadia Mono','Courier New',monospace" font-size="14" letter-spacing="4" fill="#C7D0DC" fill-opacity="0.85">V40.0.0 · SOVEREIGN HOLOGRAPHIC OVERLAY</text>
+
+  <text x="600" y="318" text-anchor="middle" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" font-weight="600" letter-spacing="3" fill="#168BFF">CRYPTOGRAPHY · CRYPTANALYSIS · NETWORK SECURITY · STEGANOGRAPHY · BLUE TEAM</text>
+
+  <!-- bottom edge ticks -->
+  <g fill="#00D9FF" fill-opacity="0.6">
+    <rect x="560" y="341" width="80" height="3"/>
+    <rect x="140" y="341" width="26" height="3" fill-opacity="0.3"/>
+    <rect x="1034" y="341" width="26" height="3" fill-opacity="0.3"/>
+  </g>
+</svg>
